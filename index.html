@@ -12,12 +12,19 @@
             color: #1a1a1a;
             margin: 0;
             padding: 0;
-            background-color: #fcfcfc;
+            /* Updated background to use your image */
+            background-image: url('Background-2.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-color: #fcfcfc; /* Fallback color */
         }
         header {
             padding: 80px 20px 40px 20px;
             text-align: center;
-            background: #fff;
+            /* Added slight transparency to header to see background through it if desired, 
+               or keep it #fff for a clean break */
+            background: rgba(255, 255, 255, 0.9);
         }
         h1 {
             font-family: 'Oswald', sans-serif;
@@ -37,8 +44,13 @@
         .container {
             max-width: 900px;
             margin: auto;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            /* Optional: adds a slight backdrop to text for readability against the grain */
+            background: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
         }
         
         /* App Store Button Styling */
@@ -50,7 +62,7 @@
             padding: 12px 24px;
             border-radius: 12px;
             text-decoration: none;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Standard Apple font for button text */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 20px 0 40px 0;
             transition: transform 0.2s ease;
         }
@@ -120,9 +132,10 @@
             font-weight: bold;
         }
         footer {
-            background: #f4f4f4;
+            background: rgba(244, 244, 244, 0.95);
             padding: 60px 20px;
             font-size: 0.9rem;
+            text-align: center;
         }
         footer a { color: #000; margin: 0 10px; }
 
@@ -183,7 +196,7 @@
     <footer>
         <p>&copy; 2026 Your LLC Name. All rights reserved.</p>
         <p>
-            <a href="mailto:support@yourllc.com">Support</a> | 
+            <a href="mailto:talk.o.matic.app@gmail.com">Support</a> | 
             <a href="#">Privacy Policy</a>
         </p>
     </footer>
