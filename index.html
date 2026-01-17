@@ -6,28 +6,32 @@
     <title>Talk-O-Matic | Subtitles for Real Life</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Parisienne&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-font: 'Oswald', sans-serif;
+            --accent-font: 'Parisienne', cursive;
+        }
+
         body {
-            font-family: 'Oswald', sans-serif;
+            font-family: var(--primary-font);
             line-height: 1.6;
             color: #1a1a1a;
             margin: 0;
             padding: 0;
-            /* Updated background to use your image */
-            background-image: url('Background-2.png');
-            background-size: cover;
+            /* Background Image Setup */
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                        url('background.jpg'); /* Replace with your filename */
             background-attachment: fixed;
+            background-size: cover;
             background-position: center;
-            background-color: #fcfcfc; /* Fallback color */
         }
+
         header {
-            padding: 80px 20px 40px 20px;
+            padding: 80px 20px 20px 20px;
             text-align: center;
-            /* Added slight transparency to header to see background through it if desired, 
-               or keep it #fff for a clean break */
-            background: rgba(255, 255, 255, 0.9);
         }
+
         h1 {
-            font-family: 'Oswald', sans-serif;
+            font-family: var(--primary-font);
             font-size: 5.5rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -35,53 +39,55 @@
             letter-spacing: -3px;
             line-height: 1;
         }
+
         .tagline {
-            font-family: 'Parisienne', cursive;
-            font-size: 2.5rem;
-            color: #444;
-            margin-top: 5px;
+            font-family: var(--accent-font);
+            font-size: 2.8rem;
+            color: #333;
+            margin-top: 10px;
         }
+
         .container {
             max-width: 900px;
             margin: auto;
-            padding: 40px 20px;
+            padding: 20px;
             text-align: center;
-            /* Optional: adds a slight backdrop to text for readability against the grain */
-            background: rgba(255, 255, 255, 0.8);
-            margin-top: 20px;
-            margin-bottom: 20px;
-            border-radius: 15px;
         }
-        
-        /* App Store Button Styling */
+
+        /* App Store Button */
         .btn-app-store {
             display: inline-flex;
             align-items: center;
             background: #000;
             color: #fff;
-            padding: 12px 24px;
-            border-radius: 12px;
+            padding: 12px 28px;
+            border-radius: 14px;
             text-decoration: none;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 20px 0 40px 0;
-            transition: transform 0.2s ease;
+            font-family: -apple-system, system-ui, sans-serif;
+            margin: 30px 0 50px 0;
+            transition: transform 0.2s ease, background 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
+
         .btn-app-store:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
             background: #222;
         }
+
         .btn-icon {
             margin-right: 12px;
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             fill: #fff;
         }
+
         .btn-text {
             text-align: left;
             line-height: 1.1;
         }
-        .btn-text .top { font-size: 0.7rem; font-weight: 400; }
-        .btn-text .bottom { font-size: 1.3rem; font-weight: 600; display: block; }
+
+        .btn-text .top { font-size: 0.75rem; font-weight: 400; }
+        .btn-text .bottom { font-size: 1.4rem; font-weight: 600; display: block; }
 
         .screenshot-container {
             display: flex;
@@ -89,58 +95,76 @@
             gap: 20px;
             margin-bottom: 60px;
         }
+
         .screenshot-placeholder {
-            background: #efefef;
+            background: rgba(255,255,255,0.7);
             width: 280px;
             aspect-ratio: 9 / 19.5;
             border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #999;
-            border: 2px solid #e0e0e0;
-            font-size: 0.8rem;
-            text-transform: uppercase;
+            color: #777;
+            border: 2px solid rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
         }
 
         .content-section {
             text-align: left;
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto 60px auto;
+            background: rgba(255,255,255,0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
+
         h3 {
             text-transform: uppercase;
             font-size: 1.8rem;
-            border-bottom: 2px solid #000;
+            border-bottom: 3px solid #000;
             display: inline-block;
-            margin-top: 40px;
+            margin-top: 30px;
+            margin-bottom: 15px;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+
+        ul { list-style: none; padding: 0; }
         li {
             margin-bottom: 15px;
             font-size: 1.2rem;
             display: flex;
             align-items: flex-start;
         }
+
         li::before {
-            content: "→";
+            content: "•";
             margin-right: 15px;
             color: #000;
             font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 1;
         }
-        footer {
-            background: rgba(244, 244, 244, 0.95);
-            padding: 60px 20px;
+
+        /* Privacy Policy Section */
+        #privacy {
+            text-align: left;
             font-size: 0.9rem;
-            text-align: center;
+            margin-top: 100px;
+            padding: 40px;
+            background: #fff;
+            border-radius: 20px;
         }
-        footer a { color: #000; margin: 0 10px; }
+
+        footer {
+            padding: 60px 20px;
+            background: rgba(255,255,255,0.8);
+        }
+
+        footer a { color: #000; text-decoration: underline; margin: 0 10px; }
 
         @media (max-width: 768px) {
             h1 { font-size: 3.5rem; }
+            .tagline { font-size: 2rem; }
             .screenshot-container { flex-direction: column; align-items: center; }
             .screenshot-placeholder { width: 80%; }
         }
@@ -170,7 +194,7 @@
         </div>
 
         <div class="content-section">
-            <p style="font-size: 1.4rem;">Talk-O-Matic turns speech into text in real time, giving you a clear view of what's being said around you.</p>
+            <p style="font-size: 1.4rem;">Stay connected to every conversation. Talk-O-Matic turns speech into text in real time, giving you a clear view of what's being said around you.</p>
             <p>Whether you're hard of hearing, in a noisy environment, or simply want to follow along more easily, Talk-O-Matic works like subtitles for real life. As people speak, their words appear on your screen—instantly and accurately.</p>
 
             <h3>How it works</h3>
@@ -188,16 +212,21 @@
                 <li>Anyone who benefits from seeing words in addition to hearing them</li>
                 <li>Situations where you need a written record of what was said</li>
             </ul>
+        </div>
 
-            <p style="font-weight: bold; margin-top: 30px;">Talk-O-Matic gives you the confidence to stay in the conversation, no matter where you are or who you're with.</p>
+        <div id="privacy">
+            <h3 style="border-bottom: 2px solid #ccc; font-size: 1.2rem;">Privacy Policy</h3>
+            <p><strong>Last Updated: January 2026</strong></p>
+            <p>Talk-O-Matic does not collect, store, or transmit any personal data. Audio processing is performed locally on your device in real-time and is never recorded or uploaded. The local network permission is used solely to connect your devices to one another. We use no third-party tracking or analytics.</p>
+            <p>Questions? Contact us at: <strong>talk.o.matic.app@gmail.com</strong></p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Your LLC Name. All rights reserved.</p>
+        <p>&copy; 2026 [Your LLC Name]. All rights reserved.</p>
         <p>
-            <a href="mailto:talk.o.matic.app@gmail.com">Support</a> | 
-            <a href="#">Privacy Policy</a>
+            <a href="mailto:talk.o.matic.app@gmail.com">Contact Support</a> | 
+            <a href="#privacy">Privacy Policy</a>
         </p>
     </footer>
 
