@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | Talk-O-Matic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Parisienne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-font: 'Oswald', sans-serif;
+            --accent-font: 'Parisienne', cursive;
+        }
+
+        body {
+            font-family: var(--primary-font);
+            line-height: 1.6;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), 
+                        url('background.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 60px 20px 20px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: -2px;
+        }
+
+        h1 a {
+            text-decoration: none;
+            color: #1a1a1a;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        p.form-intro {
+            font-family: sans-serif;
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-family: sans-serif;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background: #000;
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 12px;
+            border: none;
+            font-family: var(--primary-font);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        footer a { color: #000; text-decoration: underline; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><a href="index.html">Talk-O-Matic</a></h1>
+    </header>
+
+    <div class="container">
+        <h2>Support Request</h2>
+        <p class="form-intro">Have a question or feedback? Fill out the form below and the Pocket Mulch team will get back to you shortly.</p>
+        
+        <form name="support-contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="support-contact" />
+
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" id="name" placeholder="Brian Harnett" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email Address</label>
+                <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">How can we help?</label>
+                <textarea name="message" id="message" placeholder="Describe your issue or suggestion here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Pocket Mulch LLC. All rights reserved.</p>
+        <p>
+            <a href="index.html">Home</a> | 
+            <a href="index.html#privacy">Privacy Policy</a>
+        </p>
+    </footer>
+
+</body>
+</html>
